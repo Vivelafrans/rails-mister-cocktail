@@ -1,0 +1,7 @@
+<h1>What dose do you want?</h1>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient, required: true %>
+  <%= f.button :submit, class: 'btn btn-warning' %>
+<% end %>

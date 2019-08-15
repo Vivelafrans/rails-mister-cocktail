@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="center-heading"><h1>Cocktails FTW</h1></div>
+  <div class="cards">
+    <% @cocktails.each do |cock| %>
+      <%= link_to cocktail_path(cock) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{cocktail})">
+        <%= cock.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

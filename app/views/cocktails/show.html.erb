@@ -1,0 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/featured/?{cocktail});">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <p>Super nice cocktail!</p>
+    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-warning' %>
+  </div>
+</div>
+
+
+
+
+<% @cocktail.doses.each do |dose| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{ingredients})">
+    <%= dose.description.capitalize + ' ' + dose.ingredient.name.downcase %>
+  </div>
+<% end %>
