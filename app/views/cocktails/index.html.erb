@@ -4,9 +4,12 @@
     <% @cocktails.each do |cock| %>
       <%= link_to cocktail_path(cock) do %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{cocktail})">
-        <%= cock.name %>
+          <%= cock.name %>
         </div>
       <% end %>
     <% end %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{cocktail})">
+      <%= link_to 'Add Cocktail', new_cocktail_path %>
+    </div>
   </div>
 </div>

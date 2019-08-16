@@ -1,9 +1,20 @@
 <div class="banner">
+
+  <% if @cocktail.photo_url %>
   <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo %>); background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
     <h1><%= @cocktail.name %></h1>
     <p>Super nice cocktail!</p>
     <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-warning' %>
   </div>
+  <% else %>
+
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/featured/?{cocktail}); background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+    <h1><%= @cocktail.name %></h1>
+    <p>Super nice cocktail!</p>
+    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-warning' %>
+  </div>
+
+  <% end %>
 </div>
 
 
